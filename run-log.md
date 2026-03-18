@@ -2,6 +2,34 @@
 
 ---
 
+## [2026-03-18 17:51 AEDT] Topic 2: Solang — status: ok
+
+- **Notes written:** 2
+  - `notes/Solang.md` — architecture, LLVM pipeline, Solana-specific adaptations, incompatibilities vs EVM/ERC-20
+  - `notes/Solang Adoption.md` — GitHub metrics, community assessment, adoption vs Neon EVM, roadmap gaps
+- **Sources crawled:**
+  - `https://solang.readthedocs.io/en/latest/` — ✅ landing page, Solana target page
+  - `https://solang.readthedocs.io/en/latest/targets/solana.html` — ✅ full incompatibilities list, compute model, account model
+  - `https://github.com/hyperledger-solang/solang` — ✅ README, roadmap table, license
+  - `https://github.com/hyperledger-solang/solang/releases` — ✅ v0.3.4 release notes, active contributor set
+  - `https://www.quicknode.com/guides/solana-development/solidity/getting-started-solang-neon` — ✅ Solang vs Neon comparison table
+  - `https://solanacompass.com/learn/Solfate/write-solidity-on-solana-with-solang-feat-sean-young-solana-labs-solfate-podcast-31` — ✅ Sean Young (Solang creator) on compiler design and Solana tradeoffs
+  - `https://medium.com/@smilewithkhushi/inside-solanas-developer-toolbox-a-2025-deep-dive-7f7e6c4df389` — ✅ 2025 ecosystem assessment; confirms Solang "underused due to lack of deep tooling integration"
+- **Notable findings:**
+  - Solang is a true native compiler (Solidity → LLVM IR → SBF); no EVM overhead at runtime
+  - ERC-20 explicitly listed as incompatible with Solana target in official docs
+  - `msg.sender` unavailable — major breaking change for any EVM contract port
+  - Apache 2.0 license — forkable, commercially usable (contrast: Neon EVM is proprietary)
+  - ~1,300 GitHub stars vs Anchor's 4,400 — significant adoption gap
+  - "Underused" confirmed by both community observers (2025) and indirect evidence (no known production dApps)
+  - Neon EVM wins on adoption because it preserves the full EVM toolchain; Solang only preserves the language
+  - Solang's multi-chain scope (Solana + Polkadot + Stellar) may dilute focus
+  - Sean Young (creator): Solidity on Solana doesn't isolate devs from Solana's account model complexity
+- **LEZ relevance flag:** Solang Apache 2.0 license makes it a viable fork/collaboration point for a LEZ Solidity compiler target if needed. Adoption data strongly suggests full EVM emulation (Neon-style) wins on developer uptake vs compiler-only approach.
+- **API budget status:** Not checked (command unavailable); proceeded normally
+
+---
+
 ## [2026-03-18 11:52 AEDT] Topic 1: Neon EVM Architecture & Adoption — status: ok
 
 - **Notes written:** 3
