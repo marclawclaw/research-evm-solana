@@ -2,6 +2,36 @@
 
 ---
 
+## [2026-03-19 05:53 AEDT] Topic 4: Neon Stack — B2B EVM Compat Suite — status: ok
+
+- **Notes written:** 2
+  - `notes/Neon Stack.md` — What Neon Stack is, how it works (Neon EVM contracts + Neon Proxy), all 3 integration partners (Eclipse, Sonic, Yona), licensing model analysis, LEZ relevance
+  - `notes/Eclipse EVM Integration.md` — Eclipse's use of Neon Stack as first integration partner, developer UX outcomes, architecture overview, canonical reference case for LEZ
+- **Sources crawled:**
+  - `https://www.eclipse.xyz/articles/bringing-evm-compatibility-to-eclipse-with-the-neon-stack` — ✅ Full Eclipse Labs announcement; architecture overview, developer benefits, Neel Somani quote
+  - `https://medium.com/@neon_evm/neon-stack-powers-evm-compatibility-to-eclipse-svm-network-7dec01c24a9d` — ✅ Neon EVM Medium; full technical deep dive, component breakdown, market stats (13K dApps / 0.4% SVM), Davide Menegaldo quote
+  - `https://neonevm.org/blog/Neon_Stack_Powers_EVM_Compatibility_to_Eclipse_SVM_Network` — ⚠️ Minimal (JS-rendered content; newsletter signup only served); same content captured via Medium post
+  - `https://thedefiant.io/news/press-releases/sonic-partners-with-neon-stack-to-bring-evm-compatible-dapps-to-solana` — ✅ Sonic partnership press release (July 2024); gaming vertical, HyperGrid L2, CEO quotes
+  - `https://thedefiant.io/news/blockchains/yona-network-integrates-neon-for-evm-and-svm-compatibility-on-bitcoin` — ✅ via web_search snippet; Yona Network (Bitcoin SVM) integration confirmed July 2024
+  - `https://medium.com/@neon_evm/neon-evm-recap-2024-the-year-of-extending-solana-e04ac9da49af` — ✅ via web_search snippet; confirmed Neon Stack tested in May 2024, Eclipse deployed, Sonic + Yona interest
+- **Notable findings:**
+  - Neon Stack = Neon EVM smart contracts + Neon Proxy (wraps EVM txns into Solana txns, provides Web3 JSON-RPC API)
+  - **3 confirmed integration partners by mid-2024:** Eclipse (SVM L2 on Ethereum), Sonic (gaming SVM L2 on Solana), Yona Network (Bitcoin SVM L2)
+  - Eclipse was first, announced May 3, 2024 — launched following "test runs and optimizations" (no hard launch date found)
+  - Market framing: 13,000+ EVM dApps; only 0.4% ever migrated to SVM chains → massive untapped market for any SVM network adopting Neon Stack
+  - B2B model: CCO-led commercial licensing (Davide Menegaldo); not open source — contrast with Solang's Apache 2.0
+  - Neon Stack is positioned as the **only** mainnet-live EVM-on-SVM stack as of announcements — OP Stack and Polygon CDK are EVM-only
+  - Yona's use case opens a new angle: Neon Stack enables EVM + SVM compatibility on a **Bitcoin** L2 — not just Ethereum/Solana networks
+  - Full EVM toolchain preserved for developers: Hardhat, Remix, Truffle, MetaMask, WalletConnect, OpenZeppelin, Chainlink
+- **LEZ relevance flag:**
+  - If LEZ is SVM-based: Neon Stack is a ready-made licensable solution — Eclipse integration is the reference playbook
+  - If LEZ uses a custom VM: the Neon Stack architecture (proxy adapter + EVM bytecode interpreter + iterative txn model) is the design template
+  - Eclipse use case = exact analogue: non-Ethereum, non-mainnet-Solana SVM network adding EVM as a layer
+  - Key open question: can Logos negotiate a Neon Stack license, or does LEZ's VM architecture require a custom build?
+- **API budget status:** `openclaw usage cost` unavailable — proceeded normally
+
+---
+
 ## [2026-03-18 23:52 AEDT] Topic 3: Developer Migration Patterns (EVM → SVM) — status: ok
 
 - **Notes written:** 2
