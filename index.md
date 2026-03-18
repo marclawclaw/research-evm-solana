@@ -1,6 +1,6 @@
 # Research: EVM Compatibility on Solana
 
-> **Status:** Phase 2 in progress — Topics 1 (Neon EVM) and 2 (Solang) complete.
+> **Status:** Phase 2 in progress — Topics 1 (Neon EVM), 2 (Solang), and 3 (Developer Migration Patterns) complete.
 > **Last updated:** 2026-03-18
 > **Research owner:** Researcher Agent (Marclaw)
 
@@ -19,7 +19,8 @@ Assess EVM compatibility tools on Solana for relevance to LEZ (Logos Execution Z
 | `notes/Solang.md` | Concept | Solidity compiler for SBF — architecture, LLVM pipeline, incompatibilities vs EVM ✅ |
 | `notes/Solang Adoption.md` | Analysis | Usage stats, community health, vs Neon EVM adoption comparison ✅ |
 | `notes/Neon Stack.md` | Concept | B2B EVM compat suite for SVM networks |
-| `notes/Developer Migration Patterns.md` | Analysis | EVM→native Solana migration: do developers stay or move? |
+| `notes/Developer Migration Patterns.md` | Analysis | EVM→native Solana migration: do developers stay or move? ✅ |
+| `notes/EVM vs Native SVM Tradeoffs.md` | Analysis | Dev experience, tooling, performance, composability tradeoffs across Neon EVM / Solang / native Rust ✅ |
 | `notes/Neon Labs Business Model.md` | Competitor | Funding, token, licensing strategy |
 | `notes/LEZ EVM Relevance.md` | Analysis | Should Logos build EVM compat for LEZ? |
 

@@ -2,6 +2,36 @@
 
 ---
 
+## [2026-03-18 23:52 AEDT] Topic 3: Developer Migration Patterns (EVM → SVM) — status: ok
+
+- **Notes written:** 2
+  - `notes/Developer Migration Patterns.md` — Evidence for/against EVM→native Solana migration; who stays vs who moves; Neon EVM as permanent home vs Solang as partial bridge
+  - `notes/EVM vs Native SVM Tradeoffs.md` — Comparative analysis: programming model, tooling, performance, composability, security surface across Neon EVM / Solang / native Rust+Anchor
+- **Sources crawled:**
+  - `https://solana.com/developers/evm-to-svm/smart-contracts` — ⚠️ Minimal content retrieved (JS-heavy page); key quote captured via web search
+  - `https://neonevm.org/blog/neon-evms-next-chapter-becoming-the-fast-track-to-solana-for-evm-developers` — ⚠️ Limited (newsletter signup page only served)
+  - `https://www.quicknode.com/guides/solana-development/solidity/getting-started-solang-neon` — ✅ Full Solang vs Neon EVM comparison, Solana account model primer
+  - `https://medium.com/@neon_evm/neon-evms-mainnet-upgrade-paving-a-solana-native-future-for-ethereum-dapps-39e9badc142b` — ✅ Jan 2025 mainnet upgrade; "permanent home" positioning confirmed
+  - `https://medium.com/@neon_evm/neon-evm-recap-2024-the-year-of-extending-solana-e04ac9da49af` — ✅ 2024 strategy recap; no-Rust-needed positioning confirmed
+  - `https://medium.com/@neon_evm/bridging-the-gap-between-ethereum-and-solana-neon-evm-and-solang-13202e5eff74` — ✅ Neon EVM vs Solang architectural comparison; Solang's account model exposure confirmed
+  - `https://cryptoslate.com/how-neon-evm-blends-ethereum-and-solana-to-boost-blockchain-app-development-interview/` — ✅ CCO interview (Apr 2024); "months or a year" migration cost quote
+  - `https://www.reddit.com/r/solana/comments/13d7kbl/from_evm_to_solana/` — ⚠️ Limited (JS blocking); key sentiment captured from snippet: "consider just using polygon" advice
+  - Reddit search results: ✅ Multiple threads captured via `web_search site:reddit.com` — consistent: account model is primary barrier, not Rust
+  - `https://www.zealynx.io/blogs/evm-to-svm-guide` — ✅ 2026 EVM→SVM study plan (6-week program); confirms active migration demand in security space
+  - `https://blog.sigmaprime.io/transitioning-from-evm-to-svm-key-concepts-for-solana-security-assessment.html` — ✅ SigmaPrime Apr 2025; SVM-specific security concepts distinct from EVM
+- **Notable findings:**
+  - **No documented migration from Neon EVM → native Rust found** — the "stay forever" hypothesis is supported by absence of contrary evidence
+  - Neon EVM's 2024–2025 strategy explicitly removes every remaining reason to rewrite in Rust (Solana wallets, EIP-1559, whitepaper)
+  - Solang is positioned as a partial bridge — requires understanding Solana account model (PDAs, stateless programs, SPL tokens), which naturally leads to Rust
+  - Reddit community consensus: the account model (not Rust syntax) is the real learning barrier
+  - Security researchers are the one group forced to learn native SVM regardless of tooling preferences
+  - Composability gap is the critical limit of Neon EVM: cannot CPI into native Solana programs (Jupiter, Raydium, etc.) — relevant for DeFi use cases
+  - Performance ceiling: ~778 TPS (Neon EVM) vs 65K+ TPS (native Solana) — 97% gap; 600K CUs/swap vs ~200K native
+- **LEZ relevance flag:** Full EVM emulation (Neon-style) = permanent residency, no migration. Compiler-style (Solang-style) = partial bridge, some migration possible. Composability with native LEZ programs requires compiler/native approach.
+- **API budget status:** `openclaw usage cost` unavailable — proceeded normally
+
+---
+
 ## [2026-03-18 17:51 AEDT] Topic 2: Solang — status: ok
 
 - **Notes written:** 2
