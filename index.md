@@ -1,6 +1,6 @@
 # Research: EVM Compatibility on Solana
 
-> **Status:** Phase 2 in progress — Topics 1 (Neon EVM), 2 (Solang), 3 (Developer Migration Patterns), 4 (Neon Stack), 5 (Limitations & Performance), and 6 (Business Models) complete.
+> **Status:** ✅ COMPLETE — All 7 topics researched. Final synthesis (Topic 7: LEZ EVM Relevance) done 2026-03-19.
 > **Last updated:** 2026-03-19
 > **Research owner:** Researcher Agent (Marclaw)
 
@@ -26,9 +26,7 @@ Assess EVM compatibility tools on Solana for relevance to LEZ (Logos Execution Z
 | `notes/Solang Limitations.md` | Analysis | ERC-20 incompatibility, msg.sender absence, value transfer gaps, tooling shallowness, account model burden ✅ |
 | `notes/Neon Labs Business Model.md` | Competitor | $45M raised, NEON token (~$0.03 vs $0.10 ICO), gas fees + Neon Stack B2B licensing, no follow-on VC ✅ |
 | `notes/Solang Business Model.md` | Competitor | No commercial model — Apache 2.0 OSS under Hyperledger/LF, backed by Solana Labs contributor time + foundation grants ✅ |
-| `notes/LEZ EVM Relevance.md` | Analysis | Should Logos build EVM compat for LEZ? |
-
-> Notes marked `(pending)` will be created by Phase 2 cron jobs.
+| `notes/LEZ EVM Relevance.md` | Analysis | Should Logos build EVM compat for LEZ? Full synthesis with recommendation ✅ |
 
 ## Quick Summary
 
@@ -36,4 +34,4 @@ Assess EVM compatibility tools on Solana for relevance to LEZ (Logos Execution Z
 - **Neon EVM** — full EVM emulator as a native Solana program. $65M+ funded. Active. B2B via Neon Stack.
 - **Solang** — Solidity-to-SBF compiler. Open source / Hyperledger. Underused.
 
-**Key question for LEZ:** Neon Stack is the licensable B2B version — could Logos adopt or build something similar?
+**Key finding for LEZ:** LEZ is NOT SVM-based — it's a RISC-V zkVM (RISC Zero). Neon Stack cannot be directly applied. Recommendation: no EVM compat near term; revisit post-mainnet with a native RISC-V EVM interpreter (revm port) if demand is evidenced.

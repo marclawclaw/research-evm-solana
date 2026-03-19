@@ -2,6 +2,49 @@
 
 ---
 
+## [2026-03-19 23:54 AEDT] Topic 7: LEZ EVM Relevance — SYNTHESIS — status: complete ✅
+
+> **This is the final topic. Research is now COMPLETE.**
+
+- **Notes written:** 1
+  - `notes/LEZ EVM Relevance.md` — Full synthesis note: LEZ architecture discovery (RISC-V via RISC Zero, NOT SVM), tradeoff analysis, Neon Stack licenseability assessment (not applicable — SVM-specific), Solang adaptation path (feasible but low payoff), privacy-EVM tension analysis (unique to LEZ), recommendation (no EVM compat now; revisit post-mainnet), build-from-scratch path (revm RISC Zero port), 6 open questions, full source list
+
+- **Key discovery:** LEZ is a **RISC-V zkVM** (RISC Zero), confirmed from public GitHub repos `logos-blockchain/logos-execution-zone` and `logos-co/logos-docs`. This fundamentally changes the EVM compat analysis — LEZ is not SVM-based and Neon Stack is not applicable.
+
+- **LEZ VM confirmed facts (from lssa README / logos-docs):**
+  - Both public and private executions use **Risc0 VM bytecode** (RISC-V)
+  - Native language: Rust (compiles to RISC Zero guest programs)
+  - Execution model: stateless programs + explicit accounts (similar to SVM conceptually, not EVM)
+  - Privacy model: protocol-level ZKPs; public/private account partition; nullifier set for spent private commitments
+  - Parallel execution: Sealevel-like (non-conflicting transactions run concurrently)
+  - Status: Testnet v0.1 (March 2026) with live AMM, token creation, and wallet CLI
+
+- **Sources crawled:**
+  - `https://github.com/logos-blockchain/logos-execution-zone` — ✅ Full README; RISC-V / RISC Zero bytecode confirmed; execution model, privacy model, NSSA_WALLET_HOME_DIR config, test mode
+  - `https://github.com/logos-co/logos-docs` — ✅ Execution Zone description as "where application logic runs and state is updated"; wallet quickstart links
+  - `https://github.com/logos-co/logos-docs/blob/main/docs/apps/wallet/journeys/quickstart-for-the-logos-execution-zone-wallet.md` — ✅ RISC Zero install steps, sequencer endpoint `localhost:3040`, ZKP definition confirmed
+  - `https://github.com/logos-co/logos-docs/blob/main/docs/apps/sample-apps/journeys/create-and-use-an-amm-liquidity-pool-on-the-logos-execution-zone.md` — ✅ AMM instructions; public account model, wallet commands, LP token model
+  - `https://logos.co` — ✅ Testnet v0.1 live announcement; "consensus, execution, networking, storage, and messaging" modules
+  - `https://ecosystem.logos.co` — ✅ Eco Dev team structure; Engineering sub-team
+  - `https://github.com/logos-co` — ✅ Active repos (logos-basecamp, logos-liblogos, roadmap); C++ and Rust codebases; Solidity in tech listing (likely sample/test contracts)
+  - Web search: `Logos Execution Zone LEZ EVM compatibility architecture 2025` — No external coverage found; LEZ is not yet indexed by mainstream crypto media
+  - Web search: `logos-blockchain lssa execution zone RISC Zero ZKP VM architecture` — Confirmed RISC Zero = "zk-STARKs and the RISC-V microarchitecture"
+
+- **Recommendation summary:**
+  - **Near term (2026–2027):** Do NOT build EVM compat — wrong time, wrong priority; LEZ pre-mainnet
+  - **Medium term (2027–2028):** If demand evidenced post-mainnet, build native: port `revm` (Rust EVM) to RISC Zero guest; open source; proxy + bridge infrastructure
+  - **Neon Stack:** Not licensable for LEZ (SVM-specific architecture mismatch, proprietary license)
+  - **Solang fork:** Technically possible (Apache 2.0, LLVM → RISC-V target) but low adoption payoff per Solana data
+  - **Privacy-EVM tension:** Standard EVM compat on LEZ gets public-only execution — LEZ's core privacy differentiator is inaccessible to EVM programs without non-standard extensions
+  - **Key watch:** zkEVM-on-RISC-Zero research from broader ecosystem; LEZ mainnet stability; real developer demand signals
+
+- **Research completion summary:**
+  All 7 Phase 2 topics complete. Total notes produced: 15. Total research sessions: 7 (one per topic, scheduled via cron). Research spans: Neon EVM architecture + adoption + performance + limitations, Solang architecture + adoption + limitations, Neon Stack B2B suite + Eclipse integration, Developer migration patterns + EVM vs SVM tradeoffs, Neon Labs + Solang business models, and this synthesis note on LEZ EVM relevance.
+
+
+
+---
+
 ## [2026-03-19 11:53 AEDT] Topic 5: Limitations & Performance Analysis — status: ok
 
 - **Notes written:** 2
