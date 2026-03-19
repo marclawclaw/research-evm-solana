@@ -2,6 +2,34 @@
 
 ---
 
+## [2026-03-19 11:53 AEDT] Topic 5: Limitations & Performance Analysis — status: ok
+
+- **Notes written:** 2
+  - `notes/Neon EVM Limitations.md` — Compute overhead vs native (3× CUs post-optimization), pre/post-Jan-2025 UX friction (multi-wallet, bridging, gas token confusion), feature gaps (`block.timestamp`, `receive()`, hardcoded 2300 gas assumption), Solana congestion dependency (mid-2024 crisis), operator whitelist centralisation, identity/categorisation problem ("network extension" adoption)
+  - `notes/Solang Limitations.md` — ERC-20 explicitly incompatible (confirmed across all v0.3.x releases), `msg.sender` structurally absent (Solana multi-account model), value transfer via CPI broken (`payable`/`msg.value`/`receive()`), try-catch non-functional, 32-byte address mismatch, `ecrecover()` absent, `uint256` compute overhead, Anchor client library friction, tooling ecosystem gap (no Hardhat/Foundry/IDE integration), confirmed underused (2025)
+- **Sources crawled:**
+  - `https://solanacompass.com/learn/Validated/parallelizing-the-evm-on-solana` — ✅ Full Solana Compass transcript; Neon CTO interview; 20M→600K CU optimization, 778 TPS benchmark, parallel execution model
+  - `https://solang.readthedocs.io/en/v0.3.3/targets/solana.html` — ✅ Full incompatibilities page; ERC-20 incompatibility, msg.sender absence, address model, compute budget differences, value transfer gaps, try-catch failure
+  - `https://medium.com/@neon_evm/neon-evms-mainnet-upgrade-paving-a-solana-native-future-for-ethereum-dapps-39e9badc142b` — ✅ Jan 2025 mainnet upgrade post; pre/post wallet UX comparison, EIP-1559 rationale tied to 2024 congestion, block.timestamp fix
+  - `https://neonevm.org/blog/Parallel-processing-EVM` — ⚠️ Only newsletter signup served (JS-rendered blog)
+  - `https://neonevm.org/docs/evm_compatibility/overview` — ❌ 404 (URL dead; docs moved to docs.neonevm.org)
+  - `https://blockworks.co/news/lightspeed-newsletter-solana-network-extension` — ✅ via web_search snippet; "network extension" categorisation adoption, identity problem framing
+  - `https://news.bit2me.com/en/neon-evm-adopts-network-extension-category-in-solana` — ✅ via web_search snippet; "difficulties in ranking within the blockchain ecosystem"
+  - `https://www.reddit.com/r/solana/comments/17tgwfs/how_actively_developed_is_neon_evm/` — ⚠️ Limited (Reddit JS blocking); captured "Discord feels dead" sentiment (Nov 2023)
+  - `https://medium.com/@smilewithkhushi/inside-solanas-developer-toolbox-a-2025-deep-dive-7f7e6c4df389` — ✅ via web_search snippet; "Solang underused due to lack of deep tooling integration" (2025 assessment)
+  - `https://dev.to/shivamsspirit/minting-fungible-tokens-in-solana-using-solidity-solang-programming-language-50i6` — ✅ via web_search snippet; ERC-20 incompatibility confirmed from developer angle
+  - `https://docs.layerzero.network/v2/developers/solana/getting-started` — ✅ via web_search snippet; ERC-20 vs SPL token model comparison
+- **Notable findings:**
+  - Neon EVM's post-optimization 600K CUs/swap is still ~3× more expensive than native Solana (~200K) — an irreducible EVM emulation floor
+  - The mid-2024 Solana congestion crisis was a critical stress test revealing Neon EVM's dependency on Solana fee markets — EIP-1559 adoption was a direct response
+  - The January 2025 mainnet upgrade resolved the most painful UX barriers (multi-wallet, EIP-1559, block.timestamp) — pre-2025 UX was genuinely bad per Neon EVM's own documentation
+  - Solang's limitations are fundamentally architectural: ERC-20 incompatibility and msg.sender absence cannot be patched without abandoning fidelity to Solana's account model
+  - Solang's "underused" status is strongly confirmed across community assessment (2025), GitHub metrics (~1,300 stars vs Anchor 4,400), and absence of known production deployments
+  - For any Logos/LEZ EVM compat design: full emulation (Neon-style) preserves developer experience but carries ongoing compute overhead and congestion coupling; compiler-only (Solang-style) requires developer re-education and loses the full Ethereum toolchain
+- **API budget status:** `openclaw usage cost` unavailable — proceeded normally
+
+---
+
 ## [2026-03-19 05:53 AEDT] Topic 4: Neon Stack — B2B EVM Compat Suite — status: ok
 
 - **Notes written:** 2
