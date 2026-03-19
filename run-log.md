@@ -142,3 +142,25 @@
   - Neon Stack (B2B): Eclipse, Sonic already deployed; Yona (Bitcoin SVM) expressed interest
   - Community health: Discord was "dead" in Nov 2023; re-engaged via 2024 points program (11K DAU, 200K daily txns peak)
 - **API budget status:** `openclaw usage cost` unavailable — proceeded normally
+
+---
+
+## [2026-03-19 17:57 AEDT] Topic 6: Business Models & Company Health — status: ok
+
+- **Notes written:** 2
+  - `notes/Neon Labs Business Model.md` — $45M total raised (2021 seed $40M led by Jump Capital/IDEO CoLab/Solana Capital/3AC + 2023 public Coinlist $5M); NEON token TGE July 2023, 1B supply fixed, ~$0.03 current price (70% below $0.10 ICO); FDV ~$32.5M; ~94% supply unlocked; token allocation breakdown (24.31% foundation treasury, 31.5% ecosystem dev, 16.12% early purchasers, 15% founders); revenue streams: NEON gas fees + Neon Stack B2B licensing + DAO treasury; no follow-on VC round post-2021; NOTE: M12/Microsoft $25.6M was for a different "Neon" (Postgres DB) company; 3AC bankruptcy (2022) noted as risk; still hiring, B2B pipeline real (Eclipse, Sonic)
+  - `notes/Solang Business Model.md` — No commercial model; Apache 2.0 open-source under Hyperledger/LF Decentralized Trust (incubation); funded via Solana Labs contributor time (Sean Young), Linux Foundation infrastructure, Solana Foundation ecosystem endorsement (Jul 2023), Cosmos grant for CosmWasm support; no token, no VC, no revenue; public good project; comparison table vs Neon Labs; Logos could sponsor a new Solang target as a low-cost EVM compat approach
+
+- **Sources crawled:**
+  - https://www.coindesk.com/business/2021/11/09/neon-labs-raises-40m-to-bring-evm-functionality-to-solana
+  - https://medium.com/@neon_evm/neon-tge-and-token-allocation-45a063183087
+  - https://icodrops.com/neon-labs/
+  - https://cryptorank.io/ico/neon-labs (search)
+  - https://neon-labs.org
+  - https://careers.neonevm.org (search)
+  - https://www.lfdecentralizedtrust.org/blog/2022/09/12/meet-hyperledger-solang-a-portable-solidity-compiler
+  - https://lf-hyperledger.atlassian.net/wiki/spaces/SOL/overview
+  - https://solana.com/news/solang-solana-solidity-evm
+  - Multiple web searches: "Neon Labs funding 2024", "NEON token tokenomics", "Hyperledger Solang Solana Foundation", "Neon EVM company health 2025"
+
+- **Notable finding:** Sacra's "Neon" profile ($25M ARR, M12 investment) refers to a **different company** — Neon (neon.com), a serverless Postgres startup. Discovery.md incorrectly cited it as evidence of Neon Labs' funding. Corrected in this topic's notes.
